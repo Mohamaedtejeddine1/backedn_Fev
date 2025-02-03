@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const{connectTOMongoDb}=require('./config/db');
 
 const http =require('http');
 
@@ -40,5 +41,6 @@ app.use(function(err, req, res, next) {
 
 const server=http.createServer(app);
 server.listen(5000,() =>{
-  console.log("app running on port 5000")
+  connectTOMongoDb(),
+  console.log("app running on port 5000 ")
 });
