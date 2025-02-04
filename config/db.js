@@ -1,7 +1,7 @@
 const mongoose =require("mongoose");
 module.exports.connectTOMongoDb=async () =>{
     mongoose.set('strictQuery',false);
-    mongoose.connect('mongodb://localhost:27017/backendFev')
+    mongoose.connect(process.env.MongDb_url)
     .then(
         () => {console.log('connect to db')}
     )
