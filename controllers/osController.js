@@ -1,6 +1,6 @@
 const os = require('os');
 
-exports.getOsInformation = (req, res) => {
+module.exports.getOsInformation = (req, res) => {
     try {
         const  getOsInformation  = {
             hostname: os.hostname(),
@@ -10,6 +10,6 @@ exports.getOsInformation = (req, res) => {
         };
         res.json(getOsInformation );
     } catch (error) {
-        res.status(500).json({ error: "Erreur lors de la récupération des informations système" });
+        res.status(500).json({ error: "Erreur "  });
     }
 };
